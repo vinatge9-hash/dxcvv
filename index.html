@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>Ember & Steam Coffee — Home</title>
+  <meta name='description' content='Premium, craft-roasted coffee with transparent origins, fast, friendly service, and a sensory storytelling experience you can taste.'>
+  <meta property='og:title' content='Ember & Steam Coffee — Home'>
+  <meta property='og:description' content='Premium, craft-roasted coffee with transparent origins, fast, friendly service, and a sensory storytelling experience you can taste.'>
+  <meta property='og:image' content='https://embersteamcoffee.example/og-home.jpg'>
+  <meta property='og:type' content='website'>
+  <meta name='theme-color' content='#6B4F3C'>
+
+  <!-- Fonts -->
+  <link rel='preconnect' href='https://fonts.googleapis.com'>
+  <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+  <link href='https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Inter:wght@400;600;700;800&display=swap' rel='stylesheet'>
+
+  <!-- Tailwind CSS -->
+  <script src='https://cdn.tailwindcss.com'></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: { DEFAULT: '#6B4F3C', 50: '#efe6df', 100: '#e6d9cb', 200: '#d6b7a3', 300: '#bfa07a', 400: '#9f745d', 500: '#6B4F3C', 600: '#5a4030', 700: '#4c3327', 800: '#3b251e', 900: '#2a190f' },
+            secondary: { DEFAULT: '#C4A484', 50: '#f6efe7', 100: '#efe3d6', 200: '#e2d0be', 300: '#d5b89f', 400: '#c59b7a', 500: '#c4a484', 600: '#b58a75', 700: '#996e57', 800: '#7b533e', 900: '#5a3d2e' },
+            accent: { DEFAULT: '#F59E0B', 50: '#fef8e5', 100: '#fbeac3', 200: '#f6d07b', 300: '#f3bf2e', 400: '#f59e0b', 500: '#f59e0b', 600: '#e07a07', 700: '#c26007', 800: '#9f5107', 900: '#6b3a04' }
+          },
+          fontFamily: {
+            display: ['Playfair Display', 'serif'],
+            heading: ['Inter', 'system-ui'],
+            body: ['Inter', 'system-ui']
+          },
+          animation: {
+            'fade-in-up': 'fadeInUp 0.8s ease-out',
+            'gradientShift': 'gradientShift 3s ease infinite'
+          },
+          keyframes: {
+            fadeInUp: {
+              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' }
+            },
+            gradientShift: {
+              '0%,100%': { backgroundPosition: '0% 50%' },
+              '50%': { backgroundPosition: '100% 50%' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    :focus-visible { outline: 3px solid #6B4F3C; outline-offset: 2px; border-radius: 6px; }
+    .gradient-text { background: linear-gradient(135deg, #6B4F3C 0%, #C4A484 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .glass { backdrop-filter: saturate(180%) blur(6px); -webkit-backdrop-filter: saturate(180%) blur(6px); background: rgba(255,255,255,0.65); }
+    .noise { background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%224%22 /></filter><rect width=%22200%25%22 height=%22200%25%22 filter=%22url(%23n)%22 opacity=%220.05%22/></svg>'); opacity: .5; }
+  </style>
+</head>
+
+<body class='bg-neutral-50 text-neutral-900 font-body'>
+  <!-- Skip link for accessibility -->
+  <a href='#main' class='sr-only focus:not-sr-only absolute top-0 left-0 w-full p-4 bg-primary text-white text-center'>Skip to content</a>
+
+  <!-- Sticky Navigation -->
+  <header class='fixed top-0 w-full z-40 backdrop-blur-md bg-white/90 border-b border-neutral-200'>
+    <nav id='main-nav' class='max-w-7xl mx-auto px-6 py-4 flex items-center justify-between'>
+      <a href='index.html' class='text-2xl font-display font-bold text-neutral-900'>Ember & Steam</a>
+      <ul class='hidden md:flex items-center gap-8'>
+        <li><a href='#features' class='text-neutral-700 hover:text-primary transition-colors'>Why Ember & Steam</a></li>
+        <li><a href='#testimonials' class='text-neutral-700 hover:text-primary transition-colors'>Stories</a></li>
+        <li><a href='#cta' class='text-neutral-700 hover:text-primary transition-colors'>Visit Us</a></li>
+        <li><a href='index.html#menu' class='bg-primary text-white px-4 py-2 rounded-full font-semibold hover:shadow-lg transition'>Get Coffee</a></li>
+      </ul>
+      <button id='mobile-menu-button' aria-label='Open menu' class='md:hidden w-8 h-8 flex flex-col justify-between space-y-1'>
+        <span class='block h-0.5 bg-neutral-900'></span>
+        <span class='block h-0.5 bg-neutral-900'></span>
+        <span class='block h-0.5 bg-neutral-900'></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <aside id='mobile-drawer' class='fixed top-0 right-0 h-full w-64 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 z-50 md:hidden'>
+    <nav class='p-6 space-y-4'>
+      <a href='#features' class='block text-neutral-700'>Why Ember & Steam</a>
+      <a href='#testimonials' class='block text-neutral-700'>Social Proof</a>
+      <a href='#cta' class='block text-neutral-700'>Visit Us</a>
+      <a href='index.html#menu' class='block bg-primary text-white px-3 py-2 rounded-full'>Get Coffee</a>
+    </nav>
+  </aside>
+  <div id='drawer-overlay' class='fixed inset-0 bg-black/50 hidden md:hidden'></div>
+
+  <main id='main' class='pt-28'>
+    <!-- HERO -->
+    <section id='hero' class='relative min-h-screen flex items-center justify-center overflow-hidden'>
+      <div class='absolute inset-0'>
+        <img src='assets/hero-coffee-loop.jpg' alt='Cinematic steam rising from a pour-over' class='w-full h-full object-cover' loading='eager'>
+        <div class='absolute inset-0 bg-gradient-to-r from-black/60 to-black/30'></div>
+        <div class='absolute inset-0 glow gradient-animated'></div>
+      </div>
+      <div class='relative z-10 max-w-5xl text-center px-6 py-16'>
+        <h1 class='text-4xl md:text-6xl lg:text-7xl font-display font-extrabold leading-tight text-white gradient-text mb-4' aria-label='Main headline'>TASTE THE STORY: FROM FARM TO CUP</h1>
+        <p class='text-white/90 text-lg md:text-xl max-w-2xl mx-auto mb-8'>Premium, craft-roasted coffee with transparent origins, fast, friendly service, and a sensory storytelling experience you can taste.</p>
+        <div class='flex flex-col sm:flex-row justify-center gap-4'>
+          <a href='index.html#menu' class='inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-white bg-gradient-to-r from-primary to-secondary hover:scale-105 transition-shadow shadow-lg'>Order Coffee Now</a>
+          <a href='#origins' class='inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-white text-white hover:bg-white/10 transition'>Explore Origins</a>
+        </div>
+      </div>
+      <span class='absolute bottom-6 left-1/2 -translate-x-1/2 text-white' aria-label='Scroll to features'>
+        <svg width='28' height='28' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'>
+          <path d='M6 9l6 6 6-6'/>
+        </svg>
+      </span>
+    </section>
+
+    <!-- FEATURES -->
+    <section id='features' class='py-24 bg-white fade-in-section' aria-label='Key features'>
+      <div class='max-w-7xl mx-auto px-6'>
+        <div class='text-center mb-12'>
+          <h2 class='text-3xl md:text-4xl font-heading font-bold text-neutral-900'>Why Ember & Steam</h2>
+          <p class='text-neutral-600 mt-4'>Craft, origin transparency, and speed you can feel in every cup.</p>
+        </div>
+        <div class='grid grid-cols-1 md:grid-cols-3 gap-8'>
+          <!-- Card 1 -->
+          <article class='group bg-white rounded-2xl shadow-lg p-8 border border-neutral-100 hover:border-primary/20 transition'>
+            <div class='w-12 h-12 mb-6 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white'>
+              <span aria-hidden='true'>🌱</span>
+            </div>
+            <h3 class='text-xl font-heading font-bold mb-2 text-neutral-900 group-hover:text-primary transition'>Origin Transparency</h3>
+            <p class='text-neutral-600'>Traceable beans from farm to cup with open narratives you can trust.</p>
+          </article>
+          <!-- Card 2 -->
+          <article class='group bg-white rounded-2xl shadow-lg p-8 border border-neutral-100 hover:border-primary/20 transition'>
+            <div class='w-12 h-12 mb-6 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white'>
+              <span aria-hidden='true'>🌍</span>
+            </div>
+            <h3 class='text-xl font-heading font-bold mb-2 text-neutral-900 group-hover:text-primary transition'>Sustainability</h3>
+            <p class='text-neutral-600'>Responsible sourcing and community impact you can measure.</p>
+          </article>
+          <!-- Card 3 -->
+          <article class='group bg-white rounded-2xl shadow-lg p-8 border border-neutral-100 hover:border-primary/20 transition'>
+            <div class='w-12 h-12 mb-6 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white'>
+              <span aria-hidden='true'>⚡</span>
+            </div>
+            <h3 class='text-xl font-heading font-bold mb-2 text-neutral-900 group-hover:text-primary transition'>Fast, Friendly Service</h3>
+            <p class='text-neutral-600'>Swift ordering with premium care in every interaction.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id='testimonials' class='py-24 bg-neutral-50' aria-label='Customer testimonials'>
+      <div class='max-w-7xl mx-auto px-6'>
+        <div class='text-center mb-12'>
+          <h2 class='text-3xl md:text-4xl font-heading font-bold text-neutral-900'>What Ember & Steam Customers Say</h2>
+        </div>
+        <div class='grid grid-cols-1 md:grid-cols-3 gap-8'>
+          <blockquote class='bg-white p-6 rounded-2xl shadow-md'>
+            <p class='italic text-neutral-700'>"The craft-roast flavor is consistently exceptional."</p>
+            <div class='flex items-center mt-4'>
+              <img src='assets/avatars/alex-r.jpg' alt='Alex R. from Brooklyn' class='w-10 h-10 rounded-full object-cover'>
+              <span class='ml-3 text-neutral-900 font-semibold'>Alex R.</span>
+            </div>
+          </blockquote>
+          <blockquote class='bg-white p-6 rounded-2xl shadow-md'>
+            <p class='italic text-neutral-700'>"Origin transparency is real. I love the storytelling."</p>
+            <div class='flex items-center mt-4'>
+              <img src='assets/avatars/mina-t.jpg' alt='Mina T. from Seattle' class='w-10 h-10 rounded-full object-cover'>
+              <span class='ml-3 text-neutral-900 font-semibold'>Mina T.</span>
+            </div>
+          </blockquote>
+          <blockquote class='bg-white p-6 rounded-2xl shadow-md'>
+            <p class='italic text-neutral-700'>"Fast and friendly—my daily ritual made easy."</p>
+            <div class='flex items-center mt-4'>
+              <img src='assets/avatars/jordan-p.jpg' alt='Jordan P. from Chicago' class='w-10 h-10 rounded-full object-cover'>
+              <span class='ml-3 text-neutral-900 font-semibold'>Jordan P.</span>
+            </div>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section id='cta' aria-label='Call to action' class='py-20 bg-gradient-to-r from-primary to-secondary text-white'>
+      <div class='max-w-4xl mx-auto text-center px-6'>
+        <h2 class='text-2xl md:text-3xl font-heading font-bold mb-4'>Ready for your next perfect cup?</h2>
+        <p class='mb-6'>Join thousands who start their day with Ember & Steam.</p>
+        <a href='index.html#menu' class='inline-block bg-white text-primary font-semibold px-8 py-3 rounded-full'>Get Started Now</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class='bg-neutral-900 text-white pt-12'>
+    <div class='max-w-7xl mx-auto px-6 pb-6'>
+      <div class='grid grid-cols-1 md:grid-cols-4 gap-8'>
+        <section aria-label='Footer about'>
+          <h4 class='font-heading font-bold text-lg mb-2'>Ember & Steam</h4>
+          <p class='text-neutral-300'>Premium, craft-roasted coffee with transparent origins and a delightful, quick ordering experience.</p>
+        </section>
+        <section aria-label='Footer links'>
+          <h4 class='font-heading font-bold text-lg mb-2'>Navigate</h4>
+          <ul class='space-y-2 text-neutral-300'>
+            <li><a href='index.html#features' class='hover:text-white'>Why Ember & Steam</a></li>
+            <li><a href='index.html#testimonials' class='hover:text-white'>Stories</a></li>
+            <li><a href='index.html#cta' class='hover:text-white'>Visit Us</a></li>
+          </ul>
+        </section>
+        <section aria-label='Footer contact'>
+          <h4 class='font-heading font-bold text-lg mb-2'>Contact</h4>
+          <p class='text-neutral-300'>hello@embersteamcoffee.example</p>
+          <p class='text-neutral-300'>+1 (555) 012-3456</p>
+        </section>
+        <section aria-label='Footer social'>
+          <h4 class='font-heading font-bold text-lg mb-2'>Social</h4>
+          <div class='flex gap-3'>
+            <a href='#' aria-label='Instagram' class='w-9 h-9 rounded-full bg-neutral-800 flex items-center justify-center'>IG</a>
+            <a href='#' aria-label='Facebook' class='w-9 h-9 rounded-full bg-neutral-800 flex items-center justify-center'>FB</a>
+          </div>
+        </section>
+      </div>
+      <p class='text-center text-neutral-500 text-sm mt-8'>© 2025 Ember & Steam Coffee. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JSON-LD Structured Data -->
+  <script type='application/ld+json'>{
+    "@context": "https://schema.org",
+    "@type": "CafeOrCoffeeShop",
+    "name": "Ember & Steam Coffee",
+    "image": "https://embersteamcoffee.example/logo.png",
+    "url": "https://embersteamcoffee.example/",
+    "description": "Premium, craft-roasted coffee with transparent origins, fast, friendly service, and a sensory storytelling experience you can taste.",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "123 Roast Ave",
+      "addressLocality": "Metropolis",
+      "addressRegion": "CA",
+      "postalCode": "90001",
+      "addressCountry": "US"
+    },
+    "openingHours": ["Mo-Su 07:00-19:00"]
+  }</script>
+</body>
+</html>

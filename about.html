@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>Ember & Steam Coffee — About</title>
+  <meta name='description' content='Learn the origin, craft, and people behind Ember & Steam Coffee: transparent sourcing, artisanal roasting, and a premium daily ritual.'>
+  <meta property='og:title' content='Ember & Steam Coffee — About'>
+  <meta property='og:description' content='Learn the origin, craft, and people behind Ember & Steam Coffee: transparent sourcing, artisanal roasting, and a premium daily ritual.'>
+  <meta property='og:image' content='https://embersteamcoffee.example/og-about.jpg'>
+  <meta property='og:type' content='article'>
+  <meta name='theme-color' content='#6B4F3C'>
+
+  <link rel='preconnect' href='https://fonts.googleapis.com'>
+  <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+  <link href='https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Inter:wght@400;600;700;800&display=swap' rel='stylesheet'>
+  <script src='https://cdn.tailwindcss.com'></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: { DEFAULT: '#6B4F3C' },
+            secondary: { DEFAULT: '#C4A484' },
+            accent: { DEFAULT: '#F59E0B' }
+          },
+          fontFamily: {
+            display: ['Playfair Display', 'serif'],
+            heading: ['Inter', 'system-ui'],
+            body: ['Inter', 'system-ui']
+          },
+          animation: { 'fade-in-up': 'fadeInUp 0.8s ease-out' },
+          keyframes: {
+            fadeInUp: {
+              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    :focus-visible { outline: 3px solid #6B4F3C; outline-offset: 2px; }
+    .gradient-text { background: linear-gradient(135deg, #6B4F3C 0%, #C4A484 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  </style>
+</head>
+<body class='bg-neutral-50 text-neutral-900 font-body'>
+  <a href='#main' class='sr-only focus:not-sr-only absolute top-0 left-0 w-full p-4 bg-primary text-white text-center'>Skip to content</a>
+  <!-- NAV -->
+  <header class='fixed top-0 w-full z-40 backdrop-blur-md bg-white/90 border-b border-neutral-200'>
+    <nav class='max-w-7xl mx-auto px-6 py-4 flex items-center justify-between'>
+      <a href='index.html' class='text-2xl font-display font-bold text-neutral-900'>Ember & Steam</a>
+      <div class='hidden md:flex items-center gap-6'>
+        <a href='index.html#features' class='text-neutral-700 hover:text-primary'>Origin & Craft</a>
+        <a href='about.html' class='text-neutral-700 hover:text-primary'>Our Story</a>
+        <a href='index.html#cta' class='bg-primary text-white px-4 py-2 rounded-full'>Visit Us</a>
+      </div>
+      <button id='mobile-menu-button' aria-label='Open menu' class='md:hidden w-8 h-8 flex flex-col justify-between space-y-1'>
+        <span class='block h-0.5 bg-neutral-900'></span>
+        <span class='block h-0.5 bg-neutral-900'></span>
+        <span class='block h-0.5 bg-neutral-900'></span>
+      </button>
+    </nav>
+  </header>
+  <aside id='mobile-drawer' class='fixed top-0 right-0 h-full w-64 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 z-50 md:hidden'>
+    <nav class='p-6 space-y-4'>
+      <a href='index.html#features' class='block text-neutral-700'>Origin & Craft</a>
+      <a href='about.html' class='block text-neutral-700'>Our Story</a>
+      <a href='index.html#cta' class='block bg-primary text-white px-4 py-2 rounded-full'>Visit Us</a>
+    </nav>
+  </aside>
+  <div id='drawer-overlay' class='fixed inset-0 bg-black/50 hidden md:hidden'></div>
+
+  <main id='main' class='pt-28'>
+    <!-- HERO -->
+    <section id='hero' class='relative min-h-screen flex items-center justify-center overflow-hidden'>
+      <div class='absolute inset-0'>
+        <img src='assets/hero-story.jpg' alt='Story of coffee beans and roasting' class='w-full h-full object-cover' loading='eager'>
+        <div class='absolute inset-0 bg-gradient-to-r from-black/60 to-black/30'></div>
+      </div>
+      <div class='relative z-10 text-center px-6'>
+        <h1 class='text-4xl md:text-5xl font-display font-bold text-white gradient-text mb-4'>Our Story: Craft, Origins, and You</h1>
+        <p class='text-white/90 max-w-2xl mx-auto mb-6'>From farmers to your daily ritual, a transparent journey of craft and care. Slow-roasted, fast to you.</p>
+        <a href='index.html#menu' class='inline-block bg-white text-primary px-6 py-3 rounded-full font-semibold'>Order Coffee</a>
+      </div>
+    </section>
+
+    <!-- ORIGIN & CRAFT -->
+    <section id='origin-craft' class='py-20 bg-neutral-50' aria-label='Origin & Craft'>
+      <div class='max-w-7xl mx-auto px-6'>
+        <div class='grid grid-cols-1 md:grid-cols-2 gap-12 items-center'>
+          <div class='space-y-6'>
+            <h2 class='text-3xl md:text-4xl font-heading font-bold text-neutral-900'>Origin Stories, Craft, and Transparency</h2>
+            <p class='text-neutral-700'>We partner with farmers who practice sustainable farming, harvest beans with care, and share their stories. Our roasters craft small-batch profiles to reveal the terroir of each lot, so every cup tells a tale you can trust.</p>
+            <ul class='list-disc pl-6 text-neutral-700 space-y-2'>
+              <li>Direct-from-origin sourcing with traceability</li>
+              <li>Seasonal transparencies and backstories</li>
+              <li>Speedy ordering with no hidden fees</li>
+            </ul>
+          </div>
+          <div class='bg-white rounded-2xl p-6 shadow-md'>
+            <div class='flex items-center gap-4 mb-4'>
+              <span class='text-2xl'>✨</span>
+              <h3 class='font-heading font-semibold text-lg'>Seasonal Spotlight Roasts</h3>
+            </div>
+            <p class='text-neutral-600'>Limited-edition roasts come with origin notes, tasting profiles, and the backstory of how they came to your cup.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEAM & CULTURE -->
+    <section id='team' class='py-20' aria-label='Meet the Ember & Steam team'>
+      <div class='max-w-7xl mx-auto px-6'>
+        <div class='text-center mb-8'>
+          <h2 class='text-3xl md:text-4xl font-heading font-bold text-neutral-900'>Meet Our Team</h2>
+          <p class='text-neutral-700'>Roasters, farmers, and baristas united by curiosity, kindness, and craft.</p>
+        </div>
+        <div class='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6'>
+          <article class='bg-white rounded-2xl p-6 shadow-md text-center'>
+            <img src='assets/avatars/roastmaster.jpg' alt='Roaster portrait' class='w-16 h-16 mx-auto rounded-full object-cover mb-3'>
+            <h4 class='font-semibold'>Luna Reyes</h4>
+            <p class='text-sm text-neutral-600'>Head Roaster</p>
+          </article>
+          <article class='bg-white rounded-2xl p-6 shadow-md text-center'>
+            <img src='assets/avatars/farmer-j.png' alt='Farmer portrait' class='w-16 h-16 mx-auto rounded-full object-cover mb-3'>
+            <h4 class='font-semibold'>Jamal Khan</h4>
+            <p class='text-sm text-neutral-600'>Origin Partner</p>
+          </article>
+          <article class='bg-white rounded-2xl p-6 shadow-md text-center'>
+            <img src='assets/avatars/barista-sara.jpg' alt='Barista Sara' class='w-16 h-16 mx-auto rounded-full object-cover mb-3'>
+            <h4 class='font-semibold'>Sara Kim</h4>
+            <p class='text-sm text-neutral-600'>Shift Lead</p>
+          </article>
+          <article class='bg-white rounded-2xl p-6 shadow-md text-center'>
+            <img src='assets/avatars/chef-omar.jpg' alt='Coffee chef Omar' class='w-16 h-16 mx-auto rounded-full object-cover mb-3'>
+            <h4 class='font-semibold'>Omar Chen</h4>
+            <p class='text-sm text-neutral-600'>Sourcing & Sustainability</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- STORY & VALUES -->
+    <section id='values' class='py-20 bg-white' aria-label='Our values'>
+      <div class='max-w-7xl mx-auto px-6'>
+        <div class='grid grid-cols-1 md:grid-cols-2 gap-12 items-center'>
+          <div>
+            <h2 class='text-3xl md:text-4xl font-heading font-bold text-neutral-900 mb-4'>Craft That You Can Taste, Transparently</h2>
+            <p class='text-neutral-700'>From seed to sip, Ember & Steam is built on craftsmanship, origin storytelling, and hospitality. We combine traditional roasting with modern workflows to deliver a premium daily ritual that’s fast, warm, and impeccably transparent.</p>
+          </div>
+          <div class='space-y-4'>
+            <div class='flex items-start gap-4'>
+              <span class='bg-primary/20 text-primary rounded-full w-9 h-9 flex items-center justify-center'>1</span>
+              <p class='text-neutral-700'>Voice and storytelling that connect you to the bean’s journey.</p>
+            </div>
+            <div class='flex items-start gap-4'>
+              <span class='bg-accent text-white rounded-full w-9 h-9 flex items-center justify-center'>2</span>
+              <p class='text-neutral-700'>Fast, frictionless ordering and consistent flavor across visits.</p>
+            </div>
+            <div class='flex items-start gap-4'>
+              <span class='bg-primary/20 text-primary rounded-full w-9 h-9 flex items-center justify-center'>3</span>
+              <p class='text-neutral-700'>Seasonal roasts with rich backstories and origin data.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section id='cta' aria-label='Get started' class='py-16 bg-gradient-to-r from-primary to-secondary text-white'>
+      <div class='max-w-4xl mx-auto text-center px-6'>
+        <h3 class='text-2xl md:text-3xl font-heading font-bold mb-4'>Join the Ember & Steam daily ritual</h3>
+        <p class='mb-6'>Premium coffee, transparent origins, and a quick, delightful ordering experience.</p>
+        <a href='index.html#menu' class='inline-block bg-white text-primary px-6 py-3 rounded-full font-semibold'>Get Coffee</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class='bg-neutral-900 text-white py-12'>
+    <div class='max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8'>
+      <section>
+        <h4 class='font-heading font-bold text-lg mb-2'>Ember & Steam</h4>
+        <p class='text-neutral-400'>Premium coffee with a warm, premium and approachable voice.</p>
+      </section>
+      <section>
+        <h4 class='font-heading font-bold text-lg mb-2'>Links</h4>
+        <ul class='space-y-2 text-neutral-400'>
+          <li><a href='index.html#features' class='hover:text-white'>Origin & Craft</a></li>
+          <li><a href='about.html' class='hover:text-white'>Our Story</a></li>
+          <li><a href='index.html#cta' class='hover:text-white'>Visit Us</a></li>
+        </ul>
+      </section>
+      <section>
+        <h4 class='font-heading font-bold text-lg mb-2'>Contact</h4>
+        <p class='text-neutral-400'>hello@embersteamcoffee.example</p>
+      </section>
+      <section>
+        <h4 class='font-heading font-bold text-lg mb-2'>Social</h4>
+        <div class='flex gap-3'>
+          <a href='#' class='w-9 h-9 rounded-full bg-neutral-800 flex items-center justify-center'>IG</a>
+          <a href='#' class='w-9 h-9 rounded-full bg-neutral-800 flex items-center justify-center'>FB</a>
+        </div>
+      </section>
+    </div>
+    <p class='text-center text-neutral-500 text-sm mt-6'>© 2025 Ember & Steam Coffee. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Mobile drawer toggle
+    const btn = document.getElementById('mobile-menu-button');
+    const drawer = document.getElementById('mobile-drawer');
+    const overlay = document.getElementById('drawer-overlay');
+    if (btn && drawer) {
+      btn.addEventListener('click', () => {
+        const open = drawer.style.transform !== 'translateX(0px)';
+        drawer.style.transform = open ? 'translateX(0)' : 'translateX(-100%)';
+        overlay.style.display = open ? 'block' : 'none';
+      });
+      overlay.addEventListener('click', () => {
+        drawer.style.transform = 'translateX(-100%)';
+        overlay.style.display = 'none';
+      });
+    }
+
+    // Intersection observer for sections
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) e.target.style.opacity = 1, e.target.style.transform = 'none';
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in-section').forEach(el => {
+      el.style.opacity = 0; el.style.transform = 'translateY(20px)';
+      observer.observe(el);
+    });
+
+  </script>
+
+  <!-- JSON-LD Structured Data for LocalBusiness -->
+  <script type='application/ld+json'>{
+    "@context": "https://schema.org",
+    "@type": "CafeOrCoffeeShop",
+    "name": "Ember & Steam Coffee",
+    "image": "https://embersteamcoffee.example/logo.png",
+    "url": "https://embersteamcoffee.example/",
+    "description": "Premium, craft-roasted coffee with transparent origins, fast, friendly service, and a sensory storytelling experience you can taste.",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "123 Roast Ave",
+      "addressLocality": "Metropolis",
+      "addressRegion": "CA",
+      "postalCode": "90001",
+      "addressCountry": "US"
+    },
+    "openingHours": ["Mo-Su 07:00-19:00"]
+  }</script>
+</body>
+</html>
